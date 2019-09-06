@@ -31,7 +31,6 @@ provider:
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:us-west-2:027074064825:table/notes"
 
-
 functions:
   get:
     handler: get.main
@@ -73,3 +72,8 @@ functions:
           method: delete
           cors: true
           authorizeer: aws_iam
+
+# Create resources with CloudFormation templates
+resources:
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}
