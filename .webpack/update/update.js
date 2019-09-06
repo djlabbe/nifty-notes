@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "../../../list.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "../../../update.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -143,10 +143,10 @@ function buildResponse(statusCode, body) {
 
 /***/ }),
 
-/***/ "../../../list.js":
-/*!***************************************************!*\
-  !*** /Users/dlabbe/Developer/nifty-notes/list.js ***!
-  \***************************************************/
+/***/ "../../../update.js":
+/*!*****************************************************!*\
+  !*** /Users/dlabbe/Developer/nifty-notes/update.js ***!
+  \*****************************************************/
 /*! exports provided: main */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -161,17 +161,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 async function main(event, context) {
+  const data = JSON.parse(event.body);
   const params = {
     TableName: "notes",
-    KeyConditionExpression: "userId = :userId",
+    Key: {
+      userId: event.requestContext.identity.cognitoIdentityId,
+      noteId: event.pathParameters.id
+    },
+    UpdateExpression: "SET content = :content, attachment = :attachment",
     ExpressionAttributeValues: {
-      ":userId": event.requestContext.identity.cognitoIdentityId
-    }
+      ":attachment": data.attachment || null,
+      ":content": data.content || null
+    },
+    ReturnValues: "ALL_NEW"
   };
 
   try {
-    const result = await _libs_dynamodb_lib__WEBPACK_IMPORTED_MODULE_1__["call"]("query", params);
-    return Object(_libs_response_lib__WEBPACK_IMPORTED_MODULE_2__["success"])(result.Items);
+    await _libs_dynamodb_lib__WEBPACK_IMPORTED_MODULE_1__["call"]("update", params);
+    return Object(_libs_response_lib__WEBPACK_IMPORTED_MODULE_2__["success"])({
+      status: true
+    });
   } catch (e) {
     return Object(_libs_response_lib__WEBPACK_IMPORTED_MODULE_2__["failure"])({
       status: false
@@ -3865,4 +3874,4 @@ module.exports = require("path");
 /***/ })
 
 /******/ })));
-//# sourceMappingURL=list.js.map
+//# sourceMappingURL=update.js.map
