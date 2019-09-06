@@ -1,1 +1,2 @@
-scripts/liveapitest.sh
+scripts
+node_modules
