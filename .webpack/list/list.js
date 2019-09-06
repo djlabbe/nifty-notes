@@ -81,57 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "../../../get.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "../../../list.js");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "../../../get.js":
-/*!**************************************************!*\
-  !*** /Users/dlabbe/Developer/nifty-notes/get.js ***!
-  \**************************************************/
-/*! exports provided: main */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "main", function() { return main; });
-/* harmony import */ var source_map_support_register__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! source-map-support/register */ "../../source-map-support/register.js");
-/* harmony import */ var source_map_support_register__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(source_map_support_register__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _libs_dynamodb_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libs/dynamodb-lib */ "../../../libs/dynamodb-lib.js");
-/* harmony import */ var _libs_response_lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./libs/response-lib */ "../../../libs/response-lib.js");
-
-
-
-async function main(event, context) {
-  const params = {
-    TableName: "notes",
-    Key: {
-      userId: event.requestContext.identity.cognitoIdentityId,
-      noteId: event.pathParameters.id
-    }
-  };
-
-  try {
-    const result = await _libs_dynamodb_lib__WEBPACK_IMPORTED_MODULE_1__["call"]("get", params);
-
-    if (result.Item) {
-      // Return item
-      return Object(_libs_response_lib__WEBPACK_IMPORTED_MODULE_2__["success"])(result.Item);
-    } else {
-      return Object(_libs_response_lib__WEBPACK_IMPORTED_MODULE_2__["failure"])({
-        status: false,
-        error: "Item not found."
-      });
-    }
-  } catch (e) {
-    return Object(_libs_response_lib__WEBPACK_IMPORTED_MODULE_2__["failure"])({
-      status: false
-    });
-  }
-}
-
-/***/ }),
 
 /***/ "../../../libs/dynamodb-lib.js":
 /*!****************************************************************!*\
@@ -186,6 +139,44 @@ function buildResponse(statusCode, body) {
     },
     body: JSON.stringify(body)
   };
+}
+
+/***/ }),
+
+/***/ "../../../list.js":
+/*!***************************************************!*\
+  !*** /Users/dlabbe/Developer/nifty-notes/list.js ***!
+  \***************************************************/
+/*! exports provided: main */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "main", function() { return main; });
+/* harmony import */ var source_map_support_register__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! source-map-support/register */ "../../source-map-support/register.js");
+/* harmony import */ var source_map_support_register__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(source_map_support_register__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _libs_dynamodb_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libs/dynamodb-lib */ "../../../libs/dynamodb-lib.js");
+/* harmony import */ var _libs_response_lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./libs/response-lib */ "../../../libs/response-lib.js");
+
+
+
+async function main(event, context) {
+  const params = {
+    TableName: "notes",
+    KeyConditionExpression: "userId = :userId",
+    ExpressionAttributeValues: {
+      ":userId": event.requestContext.identity.cognitoIdentityId
+    }
+  };
+
+  try {
+    const result = await _libs_dynamodb_lib__WEBPACK_IMPORTED_MODULE_1__["call"]("query", params);
+    return Object(_libs_response_lib__WEBPACK_IMPORTED_MODULE_2__["success"])(result.Items);
+  } catch (e) {
+    return Object(_libs_response_lib__WEBPACK_IMPORTED_MODULE_2__["failure"])({
+      status: false
+    });
+  }
 }
 
 /***/ }),
@@ -3874,4 +3865,4 @@ module.exports = require("path");
 /***/ })
 
 /******/ })));
-//# sourceMappingURL=get.js.map
+//# sourceMappingURL=list.js.map
