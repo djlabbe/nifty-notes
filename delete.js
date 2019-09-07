@@ -9,7 +9,6 @@ export async function main(event, context) {
       noteId: event.pathParameters.id
     }
   };
-
   try {
     await dynamoDbLib.call("delete", params);
     return success({ status: true });

@@ -63,7 +63,7 @@ functions:
           path: notes/{id}
           method: put
           cors: true
-          authorizeer: aws_iam
+          authorizer: aws_iam
   delete:
     handler: delete.main
     events:
@@ -71,7 +71,7 @@ functions:
           path: notes/{id}
           method: delete
           cors: true
-          authorizeer: aws_iam
+          authorizer: aws_iam
 
 # Create resources with CloudFormation templates
 resources:

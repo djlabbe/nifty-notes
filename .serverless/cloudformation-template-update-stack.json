@@ -142,7 +142,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/nifty-notes-api/prod/1567793489356-2019-09-06T18:11:29.356Z/get.zip"
+          "S3Key": "serverless/nifty-notes-api/prod/1567899582525-2019-09-07T23:39:42.525Z/get.zip"
         },
         "FunctionName": "nifty-notes-api-prod-get",
         "Handler": "get.main",
@@ -161,14 +161,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetLambdaVersionlpM4DffaBfz24EWsETgg7kZ5K67zPpDCylwleuKI": {
+    "GetLambdaVersionCNfYQp8rGCjOaBfiOEFj767tIkRZPJkQNV2lOHJux5I": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetLambdaFunction"
         },
-        "CodeSha256": "kxM7ZJYejnEnfMjI77FQK0pGy+g8To4K/lUprJYfpMM="
+        "CodeSha256": "/Ic2tE0dZVaM4/rPtFNvqngJA0C/cvwtavPpM8//V1Q="
       }
     },
     "ListLambdaFunction": {
@@ -178,7 +178,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/nifty-notes-api/prod/1567793489356-2019-09-06T18:11:29.356Z/list.zip"
+          "S3Key": "serverless/nifty-notes-api/prod/1567899582525-2019-09-07T23:39:42.525Z/list.zip"
         },
         "FunctionName": "nifty-notes-api-prod-list",
         "Handler": "list.main",
@@ -197,14 +197,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ListLambdaVersionp9tNQIjpznHvnIX7hKy8wGWez5ttgULlAGuSBFI0hM": {
+    "ListLambdaVersion6fya6oY3WdnsCjZKi4DdFWFDVFN4m3UpYZcUhN6t4k": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListLambdaFunction"
         },
-        "CodeSha256": "07ZvcqyAk71MG/d7MN0XiYkpbf16ekJqPXYP/uLLLSA="
+        "CodeSha256": "WK9XOt9G85WosKSW96PCX5/MJhyUbJ4GsuSuf91ffgU="
       }
     },
     "CreateLambdaFunction": {
@@ -214,7 +214,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/nifty-notes-api/prod/1567793489356-2019-09-06T18:11:29.356Z/create.zip"
+          "S3Key": "serverless/nifty-notes-api/prod/1567899582525-2019-09-07T23:39:42.525Z/create.zip"
         },
         "FunctionName": "nifty-notes-api-prod-create",
         "Handler": "create.main",
@@ -233,14 +233,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "CreateLambdaVersionQuCXpP7Q4KymkkFKxtwMC5BFzON7yUCr0VwwHRuNHVA": {
+    "CreateLambdaVersionYmAuqdxctwUZJS9WhhxIb8r3OD3lgaH1kngweWmDnY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateLambdaFunction"
         },
-        "CodeSha256": "NH/McPcYDnOy8ftiQCf80pUUhfRza7zBkFnb6RduByA="
+        "CodeSha256": "W/Z6EhW8uVNQ2XaRfNWcEL0BFpoRkbfNKtZv2YrISS0="
       }
     },
     "UpdateLambdaFunction": {
@@ -250,7 +250,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/nifty-notes-api/prod/1567793489356-2019-09-06T18:11:29.356Z/update.zip"
+          "S3Key": "serverless/nifty-notes-api/prod/1567899582525-2019-09-07T23:39:42.525Z/update.zip"
         },
         "FunctionName": "nifty-notes-api-prod-update",
         "Handler": "update.main",
@@ -269,14 +269,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "UpdateLambdaVersionlptiicIGhuWIxP6znK19mOEDfH1Ck5fEtEjFCO4dmg": {
+    "UpdateLambdaVersionhfaiFaU7MUCI4C9WDcAuKrt8Eq3ke65V3HEGyKQbQE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateLambdaFunction"
         },
-        "CodeSha256": "vuY19jmp8k6SdyrAxBImQrbImJ0h/X8waUCc9NxT4K4="
+        "CodeSha256": "RhIcK6sJq2nJ7FxQxr6+tTf9EL7JleEKh+IlecfHNIw="
       }
     },
     "DeleteLambdaFunction": {
@@ -286,7 +286,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/nifty-notes-api/prod/1567793489356-2019-09-06T18:11:29.356Z/delete.zip"
+          "S3Key": "serverless/nifty-notes-api/prod/1567899582525-2019-09-07T23:39:42.525Z/delete.zip"
         },
         "FunctionName": "nifty-notes-api-prod-delete",
         "Handler": "delete.main",
@@ -305,14 +305,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "DeleteLambdaVersionhsCQR3VdTPg1cbEN3y82O9EcregnxBOH4fAWC8vOoc": {
+    "DeleteLambdaVersionlorqIwnxr2gmuZNT53QaiV91C0pHST7AgiTX9To6kE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteLambdaFunction"
         },
-        "CodeSha256": "tEQUka5Hc0zYv2oRjTpaIsrt9U8cY6fQQR7FsPYF1K0="
+        "CodeSha256": "jxE/1iyXpHaHBysQq7Wh8C44hEawOfj+s6X4mifcvUw="
       }
     },
     "ApiGatewayRestApi": {
@@ -588,7 +588,7 @@
           "Ref": "ApiGatewayRestApi"
         },
         "ApiKeyRequired": false,
-        "AuthorizationType": "NONE",
+        "AuthorizationType": "AWS_IAM",
         "Integration": {
           "IntegrationHttpMethod": "POST",
           "Type": "AWS_PROXY",
@@ -631,7 +631,7 @@
           "Ref": "ApiGatewayRestApi"
         },
         "ApiKeyRequired": false,
-        "AuthorizationType": "NONE",
+        "AuthorizationType": "AWS_IAM",
         "Integration": {
           "IntegrationHttpMethod": "POST",
           "Type": "AWS_PROXY",
@@ -662,7 +662,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1567793487091": {
+    "ApiGatewayDeployment1567899580475": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -901,31 +901,31 @@
     "GetLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetLambdaVersionlpM4DffaBfz24EWsETgg7kZ5K67zPpDCylwleuKI"
+        "Ref": "GetLambdaVersionCNfYQp8rGCjOaBfiOEFj767tIkRZPJkQNV2lOHJux5I"
       }
     },
     "ListLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListLambdaVersionp9tNQIjpznHvnIX7hKy8wGWez5ttgULlAGuSBFI0hM"
+        "Ref": "ListLambdaVersion6fya6oY3WdnsCjZKi4DdFWFDVFN4m3UpYZcUhN6t4k"
       }
     },
     "CreateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateLambdaVersionQuCXpP7Q4KymkkFKxtwMC5BFzON7yUCr0VwwHRuNHVA"
+        "Ref": "CreateLambdaVersionYmAuqdxctwUZJS9WhhxIb8r3OD3lgaH1kngweWmDnY"
       }
     },
     "UpdateLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateLambdaVersionlptiicIGhuWIxP6znK19mOEDfH1Ck5fEtEjFCO4dmg"
+        "Ref": "UpdateLambdaVersionhfaiFaU7MUCI4C9WDcAuKrt8Eq3ke65V3HEGyKQbQE"
       }
     },
     "DeleteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteLambdaVersionhsCQR3VdTPg1cbEN3y82O9EcregnxBOH4fAWC8vOoc"
+        "Ref": "DeleteLambdaVersionlorqIwnxr2gmuZNT53QaiV91C0pHST7AgiTX9To6kE"
       }
     },
     "ServiceEndpoint": {
